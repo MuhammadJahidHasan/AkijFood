@@ -23,50 +23,64 @@ namespace AkijFood.API.Controllers
         [HttpGet]
         public ActionResult<string> GetAllColdDrinksName()
         {
-            return Ok(_coldDrinks.GetAllColdDrinksName());
+            var response = _coldDrinks.GetAllColdDrinksName();
+
+            return Ok(response);
 
         }
 
         [HttpGet("getAllColdDrinks")]
         public ActionResult<IEnumerable<ColdDrink>> GetAllColdDrinks()
         {
+            var response = _coldDrinks.GetAllColdDrinks();
 
-            return Ok(_coldDrinks.GetAllColdDrinks());
+            return Ok(response);
 
         }
 
         [HttpPost]
         public ActionResult<ColdDrink> CreateColdDrinks([FromBody]ColdDrink coldDrink)
         {
-            return Ok(_coldDrinks.CreateColdDrinks(coldDrink));
+
+            var response = _coldDrinks.CreateColdDrinks(coldDrink);
+
+            return Ok(response);
 
         }
 
         [HttpDelete("{id}")]
         public ActionResult<ColdDrink> DeleteColdDrinks(int id)
         {
-            return Ok(_coldDrinks.DeleteColdDrink(id));
+            var response = _coldDrinks.DeleteColdDrink(id);
+
+            return Ok(response);
 
         }
        
         [HttpDelete("quantity/{quantity}")]
         public ActionResult<IEnumerable<ColdDrink>> DeleteColdDrinksByQuantity(decimal quantity)
         {
-            return Ok(_coldDrinks.DeleteColdDrinksByQuantity(quantity));
+            var response = _coldDrinks.DeleteColdDrinksByQuantity(quantity);
+
+            return Ok(response);
 
         }
 
         [HttpPut("{name}/{unitPrice}")]
         public ActionResult<string> UpdateUnitPrice(string name, decimal unitPrice)
         {
-            return Ok(_coldDrinks.UpdateUnitPrice(name, unitPrice));
+            var response = _coldDrinks.UpdateUnitPrice(name, unitPrice);
+
+            return Ok(response);
 
         }
 
         [HttpGet("getTotalPrice")]
         public ActionResult<decimal> GetTotalPrice()
         {
-            return Ok(_coldDrinks.GetTotalPrice());
+            var response = _coldDrinks.GetTotalPrice();
+
+            return Ok(response);
 
         }
 
